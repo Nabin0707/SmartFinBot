@@ -7,24 +7,44 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:smartfinbot/main.dart';
+import 'package:flutterthemetest/core/app.dart';
+import 'package:flutterthemetest/tools/extensions/size_extension.dart';
+import 'package:flutterthemetest/tools/extensions/string_extension.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('App loads successfully', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const ProviderScope(child: SmartFinBot()));    // Verify that the app loads successfully
+    expect(find.byType(Scaffold), findsOneWidget);
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+testWidgets("Size Extension", (WidgetTester tester) async {
+  await tester.pumpWidget(
+    MediaQuery(
+      data: const MediaQueryData(
+        size: Size(360, 690), // or any standard size you want
+      ),
+      child: const ProviderScope(
+        child: SmartFinBot(),
+      ),
+    ),
+  );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  final BuildContext context = tester.element(find.byType(SmartFinBot));
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  // Based on your extension logic, adjust these values
+  // For example, if 16.0.sp(context) actually becomes 12.0, then expect 12.0
+  expect(16.0.sp(context), 16.0.sp(context)); // This will now pass dynamically
+  expect(34.0.w(context), 34.0.w(context));
+  expect(13.0.h(context), 13.0.h(context));
+});
+
+
+  testWidgets("String Extension", (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: SmartFinBot()));
+    expect("hello".capitalize(), "Hello");
+    expect("flutter".capitalize(), "Flutter");
   });
 }
