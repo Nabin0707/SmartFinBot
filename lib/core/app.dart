@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterthemetest/core/router.dart';
-import 'package:flutterthemetest/tools/theme/theme.dart';
-import 'package:flutterthemetest/tools/theme/themeprovider.dart';
+//import 'package:flutterthemetest/tools/theme/theme.dart';
+//import 'package:flutterthemetest/tools/theme/themeprovider.dart';
 import 'package:flutterthemetest/tools/tools.dart';
 
 class SmartFinBot extends ConsumerWidget {
@@ -25,7 +25,7 @@ class SmartFinBot extends ConsumerWidget {
         themeMode = ThemeMode.system;
     }
 
-    WidgetsFlutterBinding.ensureInitialized();
+   
 
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(

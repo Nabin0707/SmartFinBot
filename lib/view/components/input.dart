@@ -8,6 +8,7 @@ Widget customInputField(
   required TextEditingController controller,
   bool obscureText = false,
   TextInputType keyboardType = TextInputType.text,
+  Widget? suffixIcon,
 }) {
   return TextField(
     controller: controller,
@@ -16,9 +17,12 @@ Widget customInputField(
     style: TextStyle(
       fontSize: 16.0.sp(context),
       color: AppColors.fenceGreen,
-      fontStyle: Theme.of(context).textTheme.displaySmall?.fontStyle ?? FontStyle.normal,
+      fontStyle:
+          Theme.of(context).textTheme.displaySmall?.fontStyle ??
+          FontStyle.normal,
     ),
     decoration: InputDecoration(
+      suffix: suffixIcon,
       labelText: label,
       focusColor: AppColors.lightBlue,
       fillColor: AppColors.lightGreen, // 🌿 Always light green background
@@ -27,7 +31,9 @@ Widget customInputField(
         fontSize: 16.0.sp(context),
         color: AppColors.fenceGreen,
         backgroundColor: AppColors.lightGreen,
-        fontStyle: Theme.of(context).textTheme.displaySmall?.fontStyle ?? FontStyle.normal,
+        fontStyle:
+            Theme.of(context).textTheme.displaySmall?.fontStyle ??
+            FontStyle.normal,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(18.0.sp(context)),

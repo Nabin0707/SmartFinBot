@@ -3,15 +3,9 @@ import 'package:flutterthemetest/view/features/login/presentation/pages/login_st
 import 'package:go_router/go_router.dart';
 
 GoRouter routes = GoRouter(
-      initialLocation: '/',
-      routes: [
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const LoginStartPage(),
-        ),
-        GoRoute(
-          path: '/login',
-          builder: (context, state) => const LoginPage(),
-        ),
-      ],
-    );
+  initialLocation: '/',
+  routes: [
+    GoRoute(path: '/', builder: (context, state) => const LoginStartPage()),
+    GoRoute(path: '/login', builder: (context, state) => const LoginPage()),
+  ],
+);

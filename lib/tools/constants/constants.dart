@@ -2,7 +2,7 @@ class TextConstants {
   static const String defaultText =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   static const String welcomeText =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
+      "Welcome to SmartFinBot, your personal chatBot Powered finance assistant!";
 }
 
 class LoginConstants {
@@ -17,7 +17,7 @@ class LoginConstants {
   static const String registerButton = "Sign Up";
   static const String forgotPasswordButton = "Forgot Password";
   static const String orText = "or sign up with";
-static const String registerText = "Don't have an account?";
+  static const String registerText = "Don't have an account?";
 
   static const String resetPasswordButton = "Reset Password";
   static const String emailPlaceholder = "Enter your email";

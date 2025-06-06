@@ -7,35 +7,37 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              // Top 30% Container
-              Container(
-                height: 160.0.h(context),
-                width: double.infinity,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: Text(
-                  'Welcome to ${AppConstants.appName}',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30.0.sp(context),
-                    color: Theme.of(context).colorScheme.tertiary,
-                    fontStyle:
-                        Theme.of(context).textTheme.displayMedium?.fontStyle ??
-                        FontStyle.normal,
-                  ),
+        child: Column(
+          children: [
+            // Top Container - Fixed size
+            Container(
+              height: 160.0.h(context),
+              width: double.infinity,
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Text(
+                'Welcome to ${AppConstants.appName}',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30.0.sp(context),
+                  color: Theme.of(context).colorScheme.tertiary,
+                  fontStyle:
+                      Theme.of(context).textTheme.displayMedium?.fontStyle ??
+                      FontStyle.normal,
                 ),
               ),
+            ),
 
-              BottomContainerLogin(), // Bottom fixed inside scroll
-            ],
-          ),
+            // Bottom Container - Takes remaining space and scrollable
+            Expanded(
+              child: SingleChildScrollView(
+                child: BottomContainerLogin(children: BottomColumn()),
+              ),
+            ),
+          ],
         ),
       ),
     );

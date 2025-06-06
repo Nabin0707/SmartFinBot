@@ -3,8 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterthemetest/tools/constants/color.dart';
 import 'package:flutterthemetest/tools/constants/constants.dart';
+//import 'package:flutterthemetest/tools/theme/gradient_theme.dart';
 import 'package:flutterthemetest/tools/widgets/theme_toggle.dart';
 import 'package:flutterthemetest/view/components/button.dart';
+//import 'package:flutterthemetest/view/components/gradiant_button.dart';
 import 'package:flutterthemetest/view/components/linklabel.dart';
 import 'package:flutterthemetest/tools/extensions/size_extension.dart';
 import 'package:go_router/go_router.dart';
@@ -83,7 +85,6 @@ class LoginStartPage extends ConsumerWidget {
                       () {
                         // Handle register action
                       },
-                      secondary: true,
                     ),
                     SizedBox(height: 12.0.h(context)),
                     buildLinkLabel(
