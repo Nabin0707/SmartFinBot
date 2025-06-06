@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterthemetest/tools/theme/themeprovider.dart';
+import 'package:flutterthemetest/tools/tools.dart';
 
 class ThemeToggle extends ConsumerWidget {
   final bool showLabels;
@@ -29,10 +30,7 @@ class ThemeToggle extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (showLabels) ...[
-            Text(
-              'Theme: ',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
+            Text('Theme: ', style: Theme.of(context).textTheme.bodyMedium),
             const SizedBox(width: 8),
           ],
           GestureDetector(
@@ -67,10 +65,10 @@ class ThemeToggle extends ConsumerWidget {
                     Text(
                       themeType == ThemeType.light ? 'Light' : 'Dark',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: themeType == ThemeType.light
-                                ? Theme.of(context).colorScheme.onPrimary
-                                : Theme.of(context).colorScheme.onSurface,
-                          ),
+                        color: themeType == ThemeType.light
+                            ? Theme.of(context).colorScheme.onPrimary
+                            : Theme.of(context).colorScheme.onSurface,
+                      ),
                     ),
                   ],
                 ],
@@ -87,11 +85,7 @@ class AnimatedThemeSwitch extends ConsumerWidget {
   final double width;
   final double height;
 
-  const AnimatedThemeSwitch({
-    super.key,
-    this.width = 60,
-    this.height = 30,
-  });
+  const AnimatedThemeSwitch({super.key, this.width = 60, this.height = 30});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -107,9 +101,7 @@ class AnimatedThemeSwitch extends ConsumerWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(height / 2),
-          color: isDark 
-              ? Theme.of(context).colorScheme.primary
-              : Theme.of(context).colorScheme.outline.withAlpha(30),
+          color: isDark ? AppColors.lightGreen : AppColors.lightGreen,
         ),
         child: Stack(
           children: [

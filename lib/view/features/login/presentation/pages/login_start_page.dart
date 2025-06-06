@@ -83,7 +83,7 @@ class LoginStartPage extends ConsumerWidget {
                       context,
                       LoginConstants.registerButton,
                       () {
-                        // Handle register action
+                        context.push("/register");
                       },
                     ),
                     SizedBox(height: 12.0.h(context)),

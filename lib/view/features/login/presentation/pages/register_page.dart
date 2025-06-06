@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutterthemetest/tools/tools.dart';
 import 'package:flutterthemetest/view/features/login/presentation/widgets/bottom_container_login_widget.dart';
-import 'package:flutterthemetest/view/features/login/presentation/widgets/login_bottom.dart';
+import 'package:flutterthemetest/view/features/login/presentation/widgets/register_bottom.dart';
+//import 'package:flutterthemetest/view/features/login/presentation/widgets/login_bottom.dart';
 //import 'package:go_router/go_router.dart';
+//import 'package:flutterthemetest/tools/extensions/size_extension.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
+             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -43,7 +45,7 @@ class LoginPage extends StatelessWidget {
             // Bottom Container - Takes remaining space and scrollable
             Expanded(
               child: SingleChildScrollView(
-                child: BottomContainerLogin(children: LoginBottom()),
+                child: BottomContainerLogin(children: RegisterBottom()),
               ),
             ),
           ],

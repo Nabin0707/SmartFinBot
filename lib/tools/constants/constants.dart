@@ -42,6 +42,8 @@ class AppConstants {
   static const String supportEmail = "support@example.com";
   static const String copyrightText =
       "© 2023 SmartFinBot. All rights reserved.";
+  
+  static const String privacyPolicyUrl = "https://www.nabinghimire23.com.np/";
 }
 
 class ApiEndpoints {

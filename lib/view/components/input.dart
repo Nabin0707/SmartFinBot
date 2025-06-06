@@ -9,6 +9,7 @@ Widget customInputField(
   bool obscureText = false,
   TextInputType keyboardType = TextInputType.text,
   Widget? suffixIcon,
+  String? hintText,
 }) {
   return TextField(
     controller: controller,
@@ -22,6 +23,11 @@ Widget customInputField(
           FontStyle.normal,
     ),
     decoration: InputDecoration(
+      hintText: hintText ?? "Enter $label",
+      hintStyle: TextStyle(
+        fontSize: 16.0.sp(context),
+        color: AppColors.fenceGreen.withAlpha(50), // Lighter hint text
+      ),
       suffix: suffixIcon,
       labelText: label,
       focusColor: AppColors.lightBlue,
