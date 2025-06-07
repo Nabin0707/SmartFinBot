@@ -259,33 +259,32 @@ class TermsAndConditions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         Text("By continuing, you agree to "),
         InkWell(
           onTap: () {
-            // Handle privacy policy action
+            // Handle terms of use action
             openExternalUrl("https://www.nabinghimire23.com.np");
           },
           child: Text(
-            " Terms of Use",
+            "Terms of Use",
             style: TextStyle(
               color: AppColors.caribbeanGreen,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
-
-        SizedBox(height: 10.0.sp(context)),
-        Text(" and"),
+        Text(" and "),
         InkWell(
           onTap: () {
             // Handle privacy policy action
             openExternalUrl("https://www.nabinghimire23.com.np");
           },
           child: Text(
-            " Privacy Policy",
+            "Privacy Policy",
             style: TextStyle(
               color: AppColors.caribbeanGreen,
               fontWeight: FontWeight.bold,
