@@ -23,7 +23,7 @@ class Onboarding1 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/illustrations/onboard1.svg',
+                          'lib/assets/illustrations/onboard1.svg',
                           height: 250,
                         ),
                         const SizedBox(height: 30),

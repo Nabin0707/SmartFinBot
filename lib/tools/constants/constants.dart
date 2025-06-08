@@ -42,7 +42,7 @@ class AppConstants {
   static const String supportEmail = "support@example.com";
   static const String copyrightText =
       "© 2023 SmartFinBot. All rights reserved.";
-  
+
   static const String privacyPolicyUrl = "https://www.nabinghimire23.com.np/";
 }
 
@@ -88,4 +88,5 @@ class ValidationMessages {
 
 class IconAssets {
   static const String loginAnalytics = "lib/assets/svgs/loginanalytics.svg";
+  static const String onboarding2 = "lib/assets/illustrations/onboard2.svg";
 }

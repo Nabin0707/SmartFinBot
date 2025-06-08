@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutterthemetest/tools/tools.dart';
 import 'package:flutterthemetest/tools/widgets/theme_toggle.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,25 +15,26 @@ class Onboarding2 extends StatelessWidget {
           children: [
             // Content
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.0.sp(context)),
               child: Column(
                 children: [
-                  const SizedBox(height: 50),
+                  SizedBox(height: 50.0.sp(context)),
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/illustrations/onboard2.svg',
-                          height: 250,
+                        SvgPicture.asset(
+                          IconAssets.onboarding2,
+                          width: 100.0.w(context),
+                          height: 100.0.h(context),
                         ),
-                        const SizedBox(height: 30),
+                        SizedBox(height: 30.0.sp(context)),
                         Text(
                           'Track and Enjoy',
                           style: Theme.of(context).textTheme.headlineMedium,
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.0.sp(context)),
                         Text(
                           'This is the second onboarding screen. Get ready to enjoy all the features.',
                           textAlign: TextAlign.center,
@@ -42,17 +45,21 @@ class Onboarding2 extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      context.go('/login');
+                      context.go('/');
                     },
                     child: const Text('Get Started'),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.0.sp(context)),
                 ],
               ),
             ),
 
             // Theme Toggle on Top Right
-            Positioned(top: 10, right: 10, child: ThemeToggle()),
+            Positioned(
+              top: 10.0.sp(context),
+              right: 10.0.sp(context),
+              child: ThemeToggle(),
+            ),
           ],
         ),
       ),
