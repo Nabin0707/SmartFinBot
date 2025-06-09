@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterthemetest/tools/tools.dart';
+import 'package:flutterthemetest/view/components/button.dart';
 import 'package:go_router/go_router.dart';
-import 'dart:math';
 
 class Onboarding2 extends StatelessWidget {
   const Onboarding2({super.key});
@@ -10,149 +10,104 @@ class Onboarding2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
 
     return Scaffold(
       body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            double svgSize = min(width * 0.6, 300.0.sp(context));
-            double titleFontSize = width < 600
-                ? 24.0.sp(context)
-                : 28.0.sp(context);
-            double descFontSize = width < 600
-                ? 16.0.sp(context)
-                : 18.0.sp(context);
-            double buttonFontSize = descFontSize;
-
-            return Stack(
+        child: Stack(
+          children: [
+            Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                  child: Column(
+                // Top Green Arc
+                Container(
+                  height: size.height * 0.4,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(60),
+                      bottomRight: Radius.circular(60),
+                    ),
+                  ),
+                  child: Stack(
                     children: [
-                      SizedBox(height: height * 0.08), // Extra space for toggle
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            // SVG Container
-                            Container(
-                              width: svgSize,
-                              height: svgSize,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  20.0.sp(context),
-                                ),
-                                color: Theme.of(
-                                  context,
-                                ).colorScheme.secondaryContainer,
-                              ),
-                              padding: EdgeInsets.all(20.0.sp(context)),
-                              child: SvgPicture.asset(
-                                IconAssets.onboarding2,
-                                fit: BoxFit.contain,
-                                placeholderBuilder: (context) => Container(
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(
-                                      context,
-                                    ).colorScheme.surface,
-                                    borderRadius: BorderRadius.circular(
-                                      10.0.sp(context),
-                                    ),
-                                  ),
-                                  child: Icon(
-                                    Icons.track_changes_outlined,
-                                    size: svgSize * 0.3,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurface
-                                        .withValues(alpha: 0.5),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: height * 0.05),
-
-                            // Title
-                            Text(
-                              'Track and Enjoy',
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headlineMedium
-                                  ?.copyWith(
-                                    fontSize: titleFontSize,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            ),
-                            SizedBox(height: height * 0.02),
-
-                            // Description
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: width * 0.08,
-                              ),
-                              child: Text(
-                                'This is the second onboarding screen. Get ready to enjoy all the features.',
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.bodyLarge
-                                    ?.copyWith(
-                                      fontSize: descFontSize,
-                                      height: 1.5,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
+                      Positioned(
+                        top: 16,
+                        right: 16,
+                        child: AnimatedThemeSwitch(),
                       ),
-
-                      // Get Started Button
-                      SizedBox(
-                        width: double.infinity,
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 360),
-                          child: ElevatedButton(
-                            onPressed: () => context.go('/'),
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
-                                vertical: height * 0.02,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  12.0.sp(context),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 50.0),
+                          child: Text(
+                            'Are You Ready To\nTake Control Of Your Finances?',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineMedium
+                                ?.copyWith(
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onPrimary,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
                                 ),
-                              ),
-                              backgroundColor: Theme.of(
-                                context,
-                              ).colorScheme.primary,
-                              foregroundColor: Theme.of(
-                                context,
-                              ).colorScheme.onPrimary,
-                            ),
-                            child: Text(
-                              'Get Started',
-                              style: TextStyle(
-                                fontSize: buttonFontSize,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
                           ),
                         ),
                       ),
-                      SizedBox(height: height * 0.03),
                     ],
                   ),
                 ),
-
-                // Theme Toggle
-                Positioned(
-                  top: 16.0.sp(context),
-                  right: 16.0.sp(context),
-                  child: const AnimatedThemeSwitch(),
+                // SVG & Description
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svgs/loginanalytics', // Update to match the smartphone illustration
+                        height: size.width * 0.5,
+                      ),
+                      const SizedBox(height: 30),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Text(
+                          'Take charge of your financial future with our intuitive app.',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.bodyLarge?.copyWith(height: 1.5),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // Next Button + Dots
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Column(
+                    children: [
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.circle, size: 10, color: Colors.grey),
+                          SizedBox(width: 8),
+                          Icon(Icons.circle, size: 10, color: Colors.grey),
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+                      SizedBox(
+                        width: 200,
+                        child: buildCustomButton(
+                          context,
+                          'Next',
+                          () => context.go(
+                            '/onboarding3',
+                          ), // Adjust navigation as needed
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
-            );
-          },
+            ),
+          ],
         ),
       ),
     );
