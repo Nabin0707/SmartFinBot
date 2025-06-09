@@ -88,5 +88,6 @@ class ValidationMessages {
 
 class IconAssets {
   static const String loginAnalytics = "lib/assets/svgs/loginanalytics.svg";
-  static const String onboarding2 = "lib/assets/illustrations/onboard2.svg";
+  static const String onboarding2 = "lib/assets/svgs/onboard2.svg";
+   static const String onboarding1 = "lib/assets/svgs/onboard1.svg";
 }
