@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterthemetest/tools/tools.dart';
+import 'package:flutterthemetest/view/components/button.dart';
 import 'package:flutterthemetest/view/features/login/presentation/widgets/bottom_sheet_container_widget.dart';
-
+import 'package:go_router/go_router.dart';
 
 class BottomSheetOnboarding1Widget extends StatelessWidget {
   const BottomSheetOnboarding1Widget({super.key});
@@ -48,14 +49,9 @@ class BottomSheetOnboarding1Widget extends StatelessWidget {
 
           SizedBox(height: 50.0.sp(context)),
 
-          /// NEXT text
-          Text(
-            'NEXT',
-            style: Theme.of(context).textTheme.displayMedium?.copyWith(
-              fontSize: 30.0.sp(context),
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          buildCustomButton(context, "Next", () {
+            context.push("/onboarding2");
+          }),
 
           SizedBox(height: 20.0.sp(context)),
 
