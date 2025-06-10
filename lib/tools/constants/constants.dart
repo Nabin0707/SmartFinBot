@@ -2,7 +2,7 @@ class TextConstants {
   static const String defaultText =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   static const String welcomeText =
-      "Welcome to SmartFinBot, your personal chatBot Powered finance assistant!";
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
 }
 
 class LoginConstants {
@@ -17,15 +17,30 @@ class LoginConstants {
   static const String registerButton = "Sign Up";
   static const String forgotPasswordButton = "Forgot Password";
   static const String orText = "or sign up with";
-  static const String registerText = "Don't have an account?";
+static const String registerText = "Don't have an account?";
 
   static const String resetPasswordButton = "Reset Password";
-  static const String emailPlaceholder = "Enter your email";
+  static const String emailPlaceholder = "example@example.com"; 
   static const String passwordPlaceholder = "Enter your password";
-  static const String namePlaceholder = "Enter your name";
-  static const String phonePlaceholder = "Enter your phone number";
+
+  static const String namePlaceholder = "Jhon Doe";
+   static const String nameLabel = "Full Name";
+
+  static const String phonePlaceholder = "+1 234 567 8900";
+  static const String phoneLabel = "Phone Number";
+
+  static const String addressLabel = "Address";
+
+  static const String dobLabel = "Date of Birth";
+  static const String dobPlaceholder = "Select your date of birth";
+
   static const String addressPlaceholder = "Enter your address";
   static const String emailRequired = "Email is required.";
+  static const String nameRequired = "Name is required.";
+  static const String phoneRequired = "Phone number is required.";
+  static const String addressRequired = "Address is required.";
+
+
   static const String passwordRequired = "Password is required.";
   static const String invalidEmail = "Please enter a valid email address.";
   static const String passwordTooShort =
@@ -42,8 +57,6 @@ class AppConstants {
   static const String supportEmail = "support@example.com";
   static const String copyrightText =
       "© 2023 SmartFinBot. All rights reserved.";
-
-  static const String privacyPolicyUrl = "https://www.nabinghimire23.com.np/";
 }
 
 class ApiEndpoints {
@@ -88,6 +101,11 @@ class ValidationMessages {
 
 class IconAssets {
   static const String loginAnalytics = "lib/assets/svgs/loginanalytics.svg";
-  static const String onboarding2 = "lib/assets/svgs/onboard2.svg";
-   static const String onboarding1 = "lib/assets/svgs/onboard1.svg";
+  static const String onboarding1 = "lib/assets/pngs/onboarding1.png";
+  static const String onboarding2 = "lib/assets/pngs/onboarding2.png";
+  static const String next1 = "lib/assets/svgs/next1.svg";
+  static const String next2 = "lib/assets/svgs/next2.svg";
+  static const String google = "lib/assets/svgs/google.svg";
+  static const String facebook = "lib/assets/svgs/facebook.svg";
+  static const String eye = "lib/assets/svgs/eye.svg";
 }

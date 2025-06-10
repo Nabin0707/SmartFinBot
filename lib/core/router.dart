@@ -1,8 +1,8 @@
 import 'package:flutterthemetest/view/features/login/presentation/pages/login_page.dart';
 import 'package:flutterthemetest/view/features/login/presentation/pages/login_start_page.dart';
 import 'package:flutterthemetest/view/features/login/presentation/pages/register_page.dart';
-import 'package:flutterthemetest/view/features/onboarding/presentation/pages/onboarding1.dart';
-import 'package:flutterthemetest/view/features/onboarding/presentation/pages/onboarding2.dart';
+import 'package:flutterthemetest/view/features/login/presentation/pages/onboarding1.dart';
+import 'package:flutterthemetest/view/features/login/presentation/pages/onboarding2.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter routes = GoRouter(
@@ -22,7 +22,7 @@ GoRouter routes = GoRouter(
     ),
     GoRoute(
       path: '/onboarding1',
-      builder: (context, state) => const Onboarding1(),
+      builder: (context, state) => const OnboardingPage1(),
     ),
     GoRoute(
       path: '/onboarding2',
